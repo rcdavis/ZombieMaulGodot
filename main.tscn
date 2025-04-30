@@ -1,12 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://baqc1xmpndc4l"]
+[gd_scene load_steps=4 format=3 uid="uid://baqc1xmpndc4l"]
 
-[ext_resource type="PackedScene" uid="uid://cq0n57a4krlvv" path="res://player.tscn" id="1_ig7tw"]
-[ext_resource type="PackedScene" uid="uid://bdbhggxcayj7l" path="res://zombie.tscn" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://dyvy2a6fqdw04" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://ds5oovapqxr25" path="res://mall.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://cq0n57a4krlvv" path="res://player.tscn" id="3_h2yge"]
 
 [node name="Main" type="Node"]
+script = ExtResource("1_0xm2m")
 
-[node name="Player" parent="." instance=ExtResource("1_ig7tw")]
-position = Vector2(361, 319)
+[node name="Mall" parent="." instance=ExtResource("1_ig7tw")]
 
-[node name="Zombie" parent="." instance=ExtResource("2_0xm2m")]
-position = Vector2(546, 508)
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+limit_left = 0
+limit_top = 0
+limit_right = 1600
+limit_bottom = 1200
+
+[node name="Player" parent="." instance=ExtResource("3_h2yge")]
+position = Vector2(420, 353)

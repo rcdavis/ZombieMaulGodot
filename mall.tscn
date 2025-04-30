@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://ds5oovapqxr25"]
+
+[ext_resource type="Texture2D" uid="uid://c6y0g4yvggand" path="res://MallMap.png" id="1_cxcin"]
+
+[node name="Mall" type="Parallax2D"]
+
+[node name="MallMap" type="Sprite2D" parent="."]
+texture = ExtResource("1_cxcin")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1600, 1200)
