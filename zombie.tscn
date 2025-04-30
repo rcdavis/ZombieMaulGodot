@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://bdbhggxcayj7l"]
+
+[ext_resource type="Script" uid="uid://dw3yui43lt2hv" path="res://zombie.gd" id="1_roy8y"]
+[ext_resource type="Texture2D" uid="uid://c2nsihq7d02m6" path="res://CharacterSprite.png" id="1_uiaus"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uiaus"]
+atlas = ExtResource("1_uiaus")
+region = Rect2(0, 576, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roy8y"]
+atlas = ExtResource("1_uiaus")
+region = Rect2(0, 640, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jmu02"]
+atlas = ExtResource("1_uiaus")
+region = Rect2(0, 704, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eseir"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uiaus")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_roy8y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jmu02")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7nqyo"]
+size = Vector2(64, 64)
+
+[node name="Zombie" type="RigidBody2D"]
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_roy8y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_eseir")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7nqyo")
